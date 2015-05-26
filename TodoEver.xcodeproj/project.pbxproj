@@ -10,6 +10,10 @@
 		31232E331B14B37B007C28E3 /* TodoEverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31232E321B14B37B007C28E3 /* TodoEverTests.swift */; };
 		3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135A6141B14B65B00BA6689 /* AppDelegate.swift */; };
 		3135A6181B14B7D400BA6689 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3135A6171B14B7D400BA6689 /* Images.xcassets */; };
+		3135A61C1B14BDDA00BA6689 /* ENSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61A1B14BDDA00BA6689 /* ENSDK.framework */; };
+		3135A61D1B14BDDA00BA6689 /* ENSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3135A61B1B14BDDA00BA6689 /* ENSDKResources.bundle */; };
+		3135A61F1B14BE0B00BA6689 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61E1B14BE0B00BA6689 /* MobileCoreServices.framework */; };
+		3135A6211B14BE1500BA6689 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A6201B14BE1500BA6689 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,11 @@
 		31232E321B14B37B007C28E3 /* TodoEverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEverTests.swift; sourceTree = "<group>"; };
 		3135A6141B14B65B00BA6689 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		3135A6171B14B7D400BA6689 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
+		3135A61A1B14BDDA00BA6689 /* ENSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ENSDK.framework; path = Frameworks/ENSDK.framework; sourceTree = "<group>"; };
+		3135A61B1B14BDDA00BA6689 /* ENSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ENSDKResources.bundle; path = Frameworks/ENSDKResources.bundle; sourceTree = "<group>"; };
+		3135A61E1B14BE0B00BA6689 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3135A6201B14BE1500BA6689 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3135A6231B14BF7E00BA6689 /* TDE-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TDE-Bridge-Header.h"; path = "Classes/Bridge/TDE-Bridge-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3135A6211B14BE1500BA6689 /* libxml2.dylib in Frameworks */,
+				3135A61F1B14BE0B00BA6689 /* MobileCoreServices.framework in Frameworks */,
+				3135A61C1B14BDDA00BA6689 /* ENSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +85,7 @@
 			children = (
 				3135A6131B14B65100BA6689 /* Classes */,
 				3135A6161B14B7CC00BA6689 /* Resources */,
+				3135A6191B14BDCF00BA6689 /* Frameworks */,
 				31232E1B1B14B37B007C28E3 /* Info.plist */,
 			);
 			path = TodoEver;
@@ -98,6 +111,7 @@
 		3135A6131B14B65100BA6689 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3135A6221B14BF5600BA6689 /* Bridge */,
 				3135A6141B14B65B00BA6689 /* AppDelegate.swift */,
 			);
 			name = Classes;
@@ -109,6 +123,25 @@
 				3135A6171B14B7D400BA6689 /* Images.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		3135A6191B14BDCF00BA6689 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3135A6201B14BE1500BA6689 /* libxml2.dylib */,
+				3135A61E1B14BE0B00BA6689 /* MobileCoreServices.framework */,
+				3135A61A1B14BDDA00BA6689 /* ENSDK.framework */,
+				3135A61B1B14BDDA00BA6689 /* ENSDKResources.bundle */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3135A6221B14BF5600BA6689 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				3135A6231B14BF7E00BA6689 /* TDE-Bridge-Header.h */,
+			);
+			name = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3135A6181B14B7D400BA6689 /* Images.xcassets in Resources */,
+				3135A61D1B14BDDA00BA6689 /* ENSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +351,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TodoEver/Frameworks",
+				);
 				INFOPLIST_FILE = TodoEver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TodoEver/Classes/Bridge/TDE-Bridge-Header.h";
 			};
 			name = Debug;
 		};
@@ -327,9 +366,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TodoEver/Frameworks",
+				);
 				INFOPLIST_FILE = TodoEver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TodoEver/Classes/Bridge/TDE-Bridge-Header.h";
 			};
 			name = Release;
 		};
