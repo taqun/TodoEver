@@ -19,12 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
         
+        self.configureEvernoteSDK()
+        
         let navigationController = UINavigationController()
         self.window?.rootViewController = navigationController
         
         self.window?.makeKeyAndVisible()
         
+        ENSession.sharedSession().authenticateWithViewController(navigationController, preferRegistration: false) { (error) -> Void in
+            
+        }
+        
         return true
+    }
+    
+    private func configureEvernoteSDK() {
+        let consumerKey     = TDEConfig.ENSDK_CONSUMER_KEY
+        let consumerSecret  = TDEConfig.ENSDK_CONSUMER_SECRET
+        
+        ENSession.setSharedSessionConsumerKey(consumerKey, consumerSecret: consumerSecret, optionalHost: ENSessionHostSandbox)
     }
 
     func applicationWillResignActive(application: UIApplication) {

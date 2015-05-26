@@ -31,3 +31,9 @@ Pods/
 # Carthage/Checkouts
 
 Carthage/Build
+
+
+# Project
+#
+TodoEver/Info.plist
+TodoEver/Classes/Config/TDEConfig.swift
