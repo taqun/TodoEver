@@ -15,6 +15,13 @@
 		3135A61F1B14BE0B00BA6689 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61E1B14BE0B00BA6689 /* MobileCoreServices.framework */; };
 		3135A6211B14BE1500BA6689 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A6201B14BE1500BA6689 /* libxml2.dylib */; };
 		3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135A62B1B14D74D00BA6689 /* TDEConfig.swift */; };
+		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
+		40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7771B157355004DEE74 /* SigninViewController.storyboard */; };
+		40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */; };
+		40AEF77E1B157569004DEE74 /* TDEEvernoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF77D1B157569004DEE74 /* TDEEvernoteController.swift */; };
+		40AEF7811B157695004DEE74 /* TDENotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7801B157695004DEE74 /* TDENotification.swift */; };
+		40AEF7831B1576F9004DEE74 /* IndexViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */; };
+		40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,13 @@
 		3135A6201B14BE1500BA6689 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3135A6231B14BF7E00BA6689 /* TDE-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TDE-Bridge-Header.h"; path = "Classes/Bridge/TDE-Bridge-Header.h"; sourceTree = "<group>"; };
 		3135A62B1B14D74D00BA6689 /* TDEConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEConfig.swift; path = Classes/Config/TDEConfig.swift; sourceTree = "<group>"; };
+		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
+		40AEF7771B157355004DEE74 /* SigninViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SigninViewController.storyboard; path = Assets/SigninViewController.storyboard; sourceTree = "<group>"; };
+		40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDESigninViewController.swift; path = Classes/ViewController/TDESigninViewController.swift; sourceTree = "<group>"; };
+		40AEF77D1B157569004DEE74 /* TDEEvernoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEEvernoteController.swift; path = Classes/Controller/TDEEvernoteController.swift; sourceTree = "<group>"; };
+		40AEF7801B157695004DEE74 /* TDENotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDENotification.swift; path = Classes/Notification/TDENotification.swift; sourceTree = "<group>"; };
+		40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = IndexViewController.storyboard; path = Assets/IndexViewController.storyboard; sourceTree = "<group>"; };
+		40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEIndexViewController.swift; path = Classes/ViewController/TDEIndexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,7 @@
 		31232E191B14B37B007C28E3 /* TodoEver */ = {
 			isa = PBXGroup;
 			children = (
+				40AEF7761B157324004DEE74 /* Assets */,
 				3135A6131B14B65100BA6689 /* Classes */,
 				3135A6161B14B7CC00BA6689 /* Resources */,
 				3135A6191B14BDCF00BA6689 /* Frameworks */,
@@ -113,9 +128,13 @@
 		3135A6131B14B65100BA6689 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3135A6281B14D70F00BA6689 /* Config */,
-				3135A6221B14BF5600BA6689 /* Bridge */,
 				3135A6141B14B65B00BA6689 /* AppDelegate.swift */,
+				3135A6221B14BF5600BA6689 /* Bridge */,
+				3135A6281B14D70F00BA6689 /* Config */,
+				40AEF77C1B157551004DEE74 /* Controller */,
+				40AEF7731B157242004DEE74 /* Model */,
+				40AEF77F1B15767E004DEE74 /* Notification */,
+				40AEF7791B157437004DEE74 /* ViewController */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -153,6 +172,48 @@
 				3135A62B1B14D74D00BA6689 /* TDEConfig.swift */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		40AEF7731B157242004DEE74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40AEF7741B157258004DEE74 /* TDEModelManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		40AEF7761B157324004DEE74 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				40AEF7771B157355004DEE74 /* SigninViewController.storyboard */,
+				40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		40AEF7791B157437004DEE74 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */,
+				40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		40AEF77C1B157551004DEE74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40AEF77D1B157569004DEE74 /* TDEEvernoteController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		40AEF77F1B15767E004DEE74 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				40AEF7801B157695004DEE74 /* TDENotification.swift */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AEF7831B1576F9004DEE74 /* IndexViewController.storyboard in Resources */,
+				40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */,
 				3135A6181B14B7D400BA6689 /* Images.xcassets in Resources */,
 				3135A61D1B14BDDA00BA6689 /* ENSDKResources.bundle in Resources */,
 			);
@@ -254,8 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */,
+				40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */,
 				3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */,
 				3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */,
+				40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */,
+				40AEF7811B157695004DEE74 /* TDENotification.swift in Sources */,
+				40AEF77E1B157569004DEE74 /* TDEEvernoteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

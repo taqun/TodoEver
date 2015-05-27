@@ -21,14 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.configureEvernoteSDK()
         
-        let navigationController = UINavigationController()
-        self.window?.rootViewController = navigationController
+        self.initViewController()
         
         self.window?.makeKeyAndVisible()
-        
-        ENSession.sharedSession().authenticateWithViewController(navigationController, preferRegistration: false) { (error) -> Void in
-            
-        }
         
         return true
     }
@@ -38,6 +33,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let consumerSecret  = TDEConfig.ENSDK_CONSUMER_SECRET
         
         ENSession.setSharedSessionConsumerKey(consumerKey, consumerSecret: consumerSecret, optionalHost: ENSessionHostSandbox)
+    }
+    
+    private func initViewController() {
+        let navigationController: UINavigationController
+        let viewController: UIViewController
+        
+        if TDEModelManager.sharedInstance.isLoggedIn {
+            let storyBoard = UIStoryboard(name: "IndexViewController", bundle: nil)
+            viewController = storyBoard.instantiateInitialViewController() as! TDEIndexViewController
+            
+        } else {
+            let storyBoard = UIStoryboard(name: "SigninViewController", bundle: nil)
+            viewController = storyBoard.instantiateInitialViewController() as! UIViewController
+        }
+        
+        navigationController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = navigationController
     }
 
     func applicationWillResignActive(application: UIApplication) {
