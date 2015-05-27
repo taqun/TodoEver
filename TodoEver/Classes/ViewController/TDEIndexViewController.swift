@@ -25,6 +25,13 @@ class TDEIndexViewController: UITableViewController {
     }
     
     
+    /*
+     * Private Method
+     */
+    @objc private func noteUpdated() {
+        self.tableView.reloadData()
+    }
+    
     
     /*
      * UIViewController Method
@@ -36,32 +43,42 @@ class TDEIndexViewController: UITableViewController {
         self.navigationController?.navigationBarHidden = false
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "TodoEver"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("noteUpdated"), name: TDENotification.UPDATE_NOTES, object: nil)
+        
+        TDEEvernoteController.sharedInstance.getNotesWithTodoEverTag()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        if let notes = TDEModelManager.sharedInstance.notes {
+            return notes.count
+        } else {
+            return 0
+        }
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("IndexTableCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let note = TDEModelManager.sharedInstance.notes[indexPath.row]
+        
+        cell.textLabel?.text = note.title
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

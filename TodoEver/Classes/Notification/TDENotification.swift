@@ -10,6 +10,8 @@ import UIKit
 
 class TDENotification: NSObject {
     
-    static let COMPLETE_AUTHENTICATION: String = "completeAuthenticateNotification"
+    static let COMPLETE_AUTHENTICATION: String  = "completeAuthenticateNotification"
+    
+    static let UPDATE_NOTES: String             = "updateNotesNotification"
     
 }
