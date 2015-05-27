@@ -10,6 +10,10 @@ import UIKit
 
 class TDEIndexViewController: UITableViewController {
 
+    
+    /*
+     * Initialize
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,11 +23,21 @@ class TDEIndexViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    
+    /*
+     * UIViewController Method
+     */
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // navigation bar
+        self.navigationController?.navigationBarHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.title = "TodoEver"
     }
+
 
     // MARK: - Table view data source
 

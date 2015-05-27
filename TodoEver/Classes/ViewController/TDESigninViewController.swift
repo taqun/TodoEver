@@ -44,6 +44,7 @@ class TDESigninViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        // navigation controller
         self.navigationController?.navigationBarHidden = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("completeAuthentication"), name: TDENotification.COMPLETE_AUTHENTICATION, object: nil)
