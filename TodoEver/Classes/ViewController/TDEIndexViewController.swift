@@ -12,16 +12,23 @@ class TDEIndexViewController: UITableViewController {
 
     
     /*
+     * Debug
+     */
+    @IBOutlet var __btnRefresh: UIBarButtonItem!
+    
+    @objc private func __didBtnRefresh() {
+        TDEEvernoteController.sharedInstance.getNotesWithTodoEverTag()
+    }
+    
+    
+    /*
      * Initialize
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        __btnRefresh.target = self
+        __btnRefresh.action = Selector("__didBtnRefresh")
     }
     
     
@@ -44,9 +51,10 @@ class TDEIndexViewController: UITableViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "TodoEver"
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("noteUpdated"), name: TDENotification.UPDATE_NOTES, object: nil)
+        // toolbar
+        self.navigationController?.toolbarHidden = false
         
-        TDEEvernoteController.sharedInstance.getNotesWithTodoEverTag()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("noteUpdated"), name: TDENotification.UPDATE_NOTES, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
