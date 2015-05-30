@@ -12,6 +12,18 @@ class TDEEvernoteController: NSObject {
     
     static var sharedInstance: TDEEvernoteController = TDEEvernoteController()
     
+    var queue: NSOperationQueue!
+    
+    
+    /*
+     * Initialize
+     */
+    override init() {
+        super.init()
+        
+        self.queue = NSOperationQueue()
+    }
+    
     /*
      * Authentication
      */
@@ -54,28 +66,16 @@ class TDEEvernoteController: NSObject {
     }
     
     func getNotesWithTodoEverTag() {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        var noteFilter = EDAMNoteFilter()
-        noteFilter.tagGuids = ["d2f3f09d-6564-4d39-81b6-ce3fc45c5b6c"]
-        
-        var resultSpec = EDAMNotesMetadataResultSpec()
-        resultSpec.includeTitle = true
-        
-        let noteStore = ENSession.sharedSession().primaryNoteStore()
-        noteStore.findNotesMetadataWithFilter(noteFilter, maxResults: 100, resultSpec: resultSpec, success: { (response) -> Void in
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
-            if let notes = response as? [EDAMNoteMetadata] {
-                TDEModelManager.sharedInstance.notes = notes
+        var op = TDEListNotesOperation()
+        op.addObserver(self, forKeyPath: "finished", options: .New, context: nil)
+        self.queue.addOperation(op)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if var op = object as? NSOperation {
+            if keyPath == "finished" {
+                op.removeObserver(self, forKeyPath: "finished")
             }
-            
-        }) { (error) -> Void in
-            
-            println(error)
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
 }
