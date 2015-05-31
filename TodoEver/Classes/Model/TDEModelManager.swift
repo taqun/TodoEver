@@ -14,6 +14,22 @@ class TDEModelManager: NSObject {
     
     
     /*
+     * Public Method
+     */
+    func getNoteByGuid(guid: EDAMGuid) -> (TDENote!) {
+        var result: TDENote!
+        
+        for note in self.notes {
+            if note.guid == guid {
+                result = note
+            }
+        }
+        
+        return result
+    }
+    
+    
+    /*
      * Getter, Setter
      */
     var isLoggedIn: Bool {
@@ -43,8 +59,8 @@ class TDEModelManager: NSObject {
         }
     }
     
-    private var _notes: [EDAMNoteMetadata]!
-    var notes: [EDAMNoteMetadata]! {
+    private var _notes: [TDENote]!
+    var notes: [TDENote]! {
         set {
             self._notes = newValue
             

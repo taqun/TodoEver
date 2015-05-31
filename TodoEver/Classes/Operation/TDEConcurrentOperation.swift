@@ -17,6 +17,8 @@ class TDEConcurrentOperation: NSOperation {
     override func start() {
         self.executing = true
         
+        TDEDebugger.log("start queue: \(self)")
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
@@ -25,8 +27,10 @@ class TDEConcurrentOperation: NSOperation {
      * Internal Method
      */
     internal func complete() {
-        self.executing = false
-        self.finished = true
+        self.executing  = false
+        self.finished   = true
+        
+        TDEDebugger.log("finish queue: \(self)")
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }

@@ -12,9 +12,11 @@ class TDEListNotesOperation: TDEConcurrentOperation {
     
     override func start() {
         super.start()
+        
+        let semaphore = dispatch_semaphore_create(0)
 
         var noteFilter = EDAMNoteFilter()
-        noteFilter.tagGuids = ["d2f3f09d-6564-4d39-81b6-ce3fc45c5b6c"]
+        noteFilter.tagGuids = [TDEModelManager.sharedInstance.todoEverTagGuid]
         
         var resultSpec = EDAMNotesMetadataResultSpec()
         resultSpec.includeTitle = true
@@ -22,17 +24,28 @@ class TDEListNotesOperation: TDEConcurrentOperation {
         let noteStore = ENSession.sharedSession().primaryNoteStore()
         noteStore.findNotesMetadataWithFilter(noteFilter, maxResults: 100, resultSpec: resultSpec, success: { (response) -> Void in
             
-            if let notes = response as? [EDAMNoteMetadata] {
+            var notes: [TDENote] = []
+            
+            if let noteMetas = response as? [EDAMNoteMetadata] {
+                for noteMetaData in noteMetas {
+                    var note = TDENote(metaData: noteMetaData)
+                    notes.append(note)
+                }
+                
                 TDEModelManager.sharedInstance.notes = notes
             }
             
-            self.complete()
+            dispatch_semaphore_signal(semaphore)
         
         }) { (error) -> Void in
             
             println(error)
             
-            self.complete()
+            dispatch_semaphore_signal(semaphore)
         }
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        
+        self.complete()
     }
 }

@@ -22,6 +22,8 @@ class TDEEvernoteController: NSObject {
         super.init()
         
         self.queue = NSOperationQueue()
+        self.queue.maxConcurrentOperationCount = 4
+        self.queue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
     }
     
     /*
@@ -39,43 +41,64 @@ class TDEEvernoteController: NSObject {
     
     
     /*
-     * Tag
+     * Sync
      */
-    func getTodoEverTag() {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    func sync() {
+        TDEDebugger.log("==============")
+        TDEDebugger.log("sync")
+        TDEDebugger.log("==============")
         
-        let noteStore = ENSession.sharedSession().primaryNoteStore()
-        noteStore.listTagsWithSuccess({ (response) -> Void in
-            
-            if let tags = response as? [EDAMTag] {
-                for tag in tags {
-                    if tag.name == "TodoEver" {
-                        TDEModelManager.sharedInstance.todoEverTagGuid = tag.guid
-                    }
-                }
-            }
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
-        }, failure: { (error) -> Void in
-            
-            println(error)
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        })
+        self.getNotesWithTodoEverTag()
     }
     
-    func getNotesWithTodoEverTag() {
-        var op = TDEListNotesOperation()
-        op.addObserver(self, forKeyPath: "finished", options: .New, context: nil)
-        self.queue.addOperation(op)
+    private func syncComplete() {
+        var notes = TDEModelManager.sharedInstance.notes
+        
+        for note in notes {
+            println(note.title)
+            println(note.contents)
+        }
     }
     
+    
+    /*
+     * Notes
+     */
+    private func getNotesWithTodoEverTag() {
+        var operations: [NSOperation] = []
+        
+        var listOp = TDEListNotesOperation()
+        operations.append(listOp)
+        
+        if TDEModelManager.sharedInstance.todoEverTagGuid == nil {
+            var getTagOp = TDEGetTodoEverTagOperation()
+            operations.append(getTagOp)
+            listOp.addDependency(getTagOp)
+        }
+        
+        var getAllNoteContentsOp = TDEGetAllNoteContentsOperation()
+        operations.append(getAllNoteContentsOp)
+        getAllNoteContentsOp.addDependency(listOp)
+        
+        self.queue.addOperations(operations, waitUntilFinished: false)
+    }
+    
+    
+    /*
+     * KVO
+     */
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if var op = object as? NSOperation {
-            if keyPath == "finished" {
-                op.removeObserver(self, forKeyPath: "finished")
+        if var queue = object as? NSOperationQueue {
+            if keyPath == "operations" {
+                TDEDebugger.log("queue remaining = \(self.queue.operationCount)")
+                
+                if self.queue.operationCount == 0 {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.syncComplete()
+                    })
+                }
             }
         }
     }
+
 }

@@ -17,6 +17,12 @@
 		3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135A62B1B14D74D00BA6689 /* TDEConfig.swift */; };
 		31FAB2B21B1993B200404308 /* TDEListNotesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2B11B1993B200404308 /* TDEListNotesOperation.swift */; };
 		31FAB2B41B19A09F00404308 /* TDEConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2B31B19A09F00404308 /* TDEConcurrentOperation.swift */; };
+		31FAB2B61B19A55900404308 /* TDETaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2B51B19A55900404308 /* TDETaskListViewController.swift */; };
+		31FAB2B81B19CDF900404308 /* TDEGetTodoEverTagOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2B71B19CDF900404308 /* TDEGetTodoEverTagOperation.swift */; };
+		31FAB2BA1B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2B91B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift */; };
+		31FAB2BC1B1AEDE300404308 /* TDEGetNoteContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */; };
+		31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */; };
+		31FAB2C11B1B051A00404308 /* TDENote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C01B1B051A00404308 /* TDENote.swift */; };
 		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
 		40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7771B157355004DEE74 /* SigninViewController.storyboard */; };
 		40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */; };
@@ -52,6 +58,12 @@
 		3135A62B1B14D74D00BA6689 /* TDEConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEConfig.swift; path = Classes/Config/TDEConfig.swift; sourceTree = "<group>"; };
 		31FAB2B11B1993B200404308 /* TDEListNotesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEListNotesOperation.swift; path = Classes/Operation/TDEListNotesOperation.swift; sourceTree = "<group>"; };
 		31FAB2B31B19A09F00404308 /* TDEConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEConcurrentOperation.swift; path = Classes/Operation/TDEConcurrentOperation.swift; sourceTree = "<group>"; };
+		31FAB2B51B19A55900404308 /* TDETaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDETaskListViewController.swift; path = Classes/ViewController/TDETaskListViewController.swift; sourceTree = "<group>"; };
+		31FAB2B71B19CDF900404308 /* TDEGetTodoEverTagOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEGetTodoEverTagOperation.swift; path = Classes/Operation/TDEGetTodoEverTagOperation.swift; sourceTree = "<group>"; };
+		31FAB2B91B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEGetAllNoteContentsOperation.swift; path = Classes/Operation/TDEGetAllNoteContentsOperation.swift; sourceTree = "<group>"; };
+		31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEGetNoteContentOperation.swift; path = Classes/Operation/TDEGetNoteContentOperation.swift; sourceTree = "<group>"; };
+		31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEDebugger.swift; path = Classes/Util/TDEDebugger.swift; sourceTree = "<group>"; };
+		31FAB2C01B1B051A00404308 /* TDENote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDENote.swift; path = Classes/Model/TDENote.swift; sourceTree = "<group>"; };
 		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
 		40AEF7771B157355004DEE74 /* SigninViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SigninViewController.storyboard; path = Assets/SigninViewController.storyboard; sourceTree = "<group>"; };
 		40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDESigninViewController.swift; path = Classes/ViewController/TDESigninViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 				40AEF7731B157242004DEE74 /* Model */,
 				40AEF77F1B15767E004DEE74 /* Notification */,
 				31FAB2B01B19939100404308 /* Operation */,
+				31FAB2BD1B1AEFBF00404308 /* Util */,
 				40AEF7791B157437004DEE74 /* ViewController */,
 			);
 			name = Classes;
@@ -184,14 +197,26 @@
 			children = (
 				31FAB2B11B1993B200404308 /* TDEListNotesOperation.swift */,
 				31FAB2B31B19A09F00404308 /* TDEConcurrentOperation.swift */,
+				31FAB2B71B19CDF900404308 /* TDEGetTodoEverTagOperation.swift */,
+				31FAB2B91B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift */,
+				31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */,
 			);
 			name = Operation;
+			sourceTree = "<group>";
+		};
+		31FAB2BD1B1AEFBF00404308 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		40AEF7731B157242004DEE74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				40AEF7741B157258004DEE74 /* TDEModelManager.swift */,
+				31FAB2C01B1B051A00404308 /* TDENote.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,6 +235,7 @@
 			children = (
 				40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */,
 				40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */,
+				31FAB2B51B19A55900404308 /* TDETaskListViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -331,14 +357,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FAB2B81B19CDF900404308 /* TDEGetTodoEverTagOperation.swift in Sources */,
 				40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */,
+				31FAB2BA1B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift in Sources */,
 				31FAB2B21B1993B200404308 /* TDEListNotesOperation.swift in Sources */,
+				31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */,
 				40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */,
 				3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */,
 				3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */,
+				31FAB2C11B1B051A00404308 /* TDENote.swift in Sources */,
 				31FAB2B41B19A09F00404308 /* TDEConcurrentOperation.swift in Sources */,
 				40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */,
+				31FAB2B61B19A55900404308 /* TDETaskListViewController.swift in Sources */,
 				40AEF7811B157695004DEE74 /* TDENotification.swift in Sources */,
+				31FAB2BC1B1AEDE300404308 /* TDEGetNoteContentOperation.swift in Sources */,
 				40AEF77E1B157569004DEE74 /* TDEEvernoteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
