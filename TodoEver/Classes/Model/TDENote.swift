@@ -12,15 +12,25 @@ class TDENote: NSObject {
     
     private var metaData: EDAMNoteMetadata
     
-    var contents: String!
+    var tasks: [TDETask]
+    
     
     /*
      * Initialize
      */
     init(metaData: EDAMNoteMetadata) {
         self.metaData = metaData
+        self.tasks = []
         
         super.init()
+    }
+    
+    
+    /*
+     * Public Method
+     */
+    func appendTask(task: TDETask) {
+        tasks.append(task)
     }
     
     

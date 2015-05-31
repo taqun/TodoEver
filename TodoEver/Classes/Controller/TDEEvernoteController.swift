@@ -55,8 +55,8 @@ class TDEEvernoteController: NSObject {
         var notes = TDEModelManager.sharedInstance.notes
         
         for note in notes {
-            println(note.title)
-            println(note.contents)
+            //println(note.title)
+            //println(note.contents)
         }
     }
     

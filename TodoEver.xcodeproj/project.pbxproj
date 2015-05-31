@@ -23,6 +23,7 @@
 		31FAB2BC1B1AEDE300404308 /* TDEGetNoteContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */; };
 		31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */; };
 		31FAB2C11B1B051A00404308 /* TDENote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C01B1B051A00404308 /* TDENote.swift */; };
+		31FAB2C31B1B799100404308 /* TDETask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C21B1B799100404308 /* TDETask.swift */; };
 		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
 		40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7771B157355004DEE74 /* SigninViewController.storyboard */; };
 		40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */; };
@@ -30,6 +31,7 @@
 		40AEF7811B157695004DEE74 /* TDENotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7801B157695004DEE74 /* TDENotification.swift */; };
 		40AEF7831B1576F9004DEE74 /* IndexViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */; };
 		40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */; };
+		52A00FFB0345E140594CA189 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEFDCA57A59E6ED30FDA657 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEGetNoteContentOperation.swift; path = Classes/Operation/TDEGetNoteContentOperation.swift; sourceTree = "<group>"; };
 		31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEDebugger.swift; path = Classes/Util/TDEDebugger.swift; sourceTree = "<group>"; };
 		31FAB2C01B1B051A00404308 /* TDENote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDENote.swift; path = Classes/Model/TDENote.swift; sourceTree = "<group>"; };
+		31FAB2C21B1B799100404308 /* TDETask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDETask.swift; path = Classes/Model/TDETask.swift; sourceTree = "<group>"; };
 		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
 		40AEF7771B157355004DEE74 /* SigninViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SigninViewController.storyboard; path = Assets/SigninViewController.storyboard; sourceTree = "<group>"; };
 		40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDESigninViewController.swift; path = Classes/ViewController/TDESigninViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 		40AEF7801B157695004DEE74 /* TDENotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDENotification.swift; path = Classes/Notification/TDENotification.swift; sourceTree = "<group>"; };
 		40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = IndexViewController.storyboard; path = Assets/IndexViewController.storyboard; sourceTree = "<group>"; };
 		40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEIndexViewController.swift; path = Classes/ViewController/TDEIndexViewController.swift; sourceTree = "<group>"; };
+		4AEFDCA57A59E6ED30FDA657 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D601358337C79FA12E0024E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 				3135A6211B14BE1500BA6689 /* libxml2.dylib in Frameworks */,
 				3135A61F1B14BE0B00BA6689 /* MobileCoreServices.framework in Frameworks */,
 				3135A61C1B14BDDA00BA6689 /* ENSDK.framework in Frameworks */,
+				52A00FFB0345E140594CA189 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +107,8 @@
 				31232E191B14B37B007C28E3 /* TodoEver */,
 				31232E2F1B14B37B007C28E3 /* TodoEverTests */,
 				31232E181B14B37B007C28E3 /* Products */,
+				6F0A9402845079A9566D1EDB /* Pods */,
+				449B8E8BDB03A35ADDB49A1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +226,7 @@
 			children = (
 				40AEF7741B157258004DEE74 /* TDEModelManager.swift */,
 				31FAB2C01B1B051A00404308 /* TDENote.swift */,
+				31FAB2C21B1B799100404308 /* TDETask.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -256,6 +266,23 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+		449B8E8BDB03A35ADDB49A1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AEFDCA57A59E6ED30FDA657 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F0A9402845079A9566D1EDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D601358337C79FA12E0024E /* Pods.debug.xcconfig */,
+				E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31232E361B14B37B007C28E3 /* Build configuration list for PBXNativeTarget "TodoEver" */;
 			buildPhases = (
+				E733AB5AFAD79A484886B43B /* Check Pods Manifest.lock */,
 				31232E131B14B37B007C28E3 /* Sources */,
 				31232E141B14B37B007C28E3 /* Frameworks */,
 				31232E151B14B37B007C28E3 /* Resources */,
+				168DF90B9A6AFEB4209445C3 /* Embed Pods Frameworks */,
+				49055675E0B1CD18F3CEB9D7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +382,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		168DF90B9A6AFEB4209445C3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49055675E0B1CD18F3CEB9D7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E733AB5AFAD79A484886B43B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		31232E131B14B37B007C28E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,6 +443,7 @@
 				40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */,
 				3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */,
 				3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */,
+				31FAB2C31B1B799100404308 /* TDETask.swift in Sources */,
 				31FAB2C11B1B051A00404308 /* TDENote.swift in Sources */,
 				31FAB2B41B19A09F00404308 /* TDEConcurrentOperation.swift in Sources */,
 				40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */,
@@ -477,6 +556,7 @@
 		};
 		31232E371B14B37B007C28E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D601358337C79FA12E0024E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -492,6 +572,7 @@
 		};
 		31232E381B14B37B007C28E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
