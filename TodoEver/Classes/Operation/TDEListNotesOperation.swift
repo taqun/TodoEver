@@ -24,16 +24,23 @@ class TDEListNotesOperation: TDEConcurrentOperation {
         let noteStore = ENSession.sharedSession().primaryNoteStore()
         noteStore.findNotesMetadataWithFilter(noteFilter, maxResults: 100, resultSpec: resultSpec, success: { (response) -> Void in
             
-            var notes: [TDENote] = []
-            
             if let noteMetas = response as? [EDAMNoteMetadata] {
-                for noteMetaData in noteMetas {
-                    var note = TDENote(metaData: noteMetaData)
-                    notes.append(note)
+                for noteMeta in noteMetas {
+                    
+                    println(noteMeta.guid)
+                    println(TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid))
+                    
+                    if let localNote = TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid) {
+                        println("\(localNote.title) is exsist")
+                    } else {
+                        var note = TDEMNote.MR_createEntity() as! TDEMNote
+                        note.parseMetaData(noteMeta)
+                    }
+
                 }
-                
-                TDEModelManager.sharedInstance.notes = notes
             }
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(TDENotification.UPDATE_NOTES, object: nil)
             
             dispatch_semaphore_signal(semaphore)
         

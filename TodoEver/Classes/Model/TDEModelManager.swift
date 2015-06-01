@@ -8,6 +8,8 @@
 
 import UIKit
 
+import MagicalRecord
+
 class TDEModelManager: NSObject {
     
     static var sharedInstance: TDEModelManager = TDEModelManager()
@@ -16,16 +18,33 @@ class TDEModelManager: NSObject {
     /*
      * Public Method
      */
-    func getNoteByGuid(guid: EDAMGuid) -> (TDENote!) {
-        var result: TDENote!
-        
-        for note in self.notes {
-            if note.guid == guid {
-                result = note
+    func getNoteByGuid(guid: EDAMGuid) -> (TDEMNote!) {
+        let predicate = NSPredicate(format: "guid = %@", guid)
+        if let notes = TDEMNote.MR_findAllWithPredicate(predicate) as? [TDEMNote] {
+            if notes.count > 0 {
+                return notes[0]
+            } else {
+                return nil
             }
+        } else {
+            return nil
         }
+    }
+    
+    
+    /*
+     * CoreData
+     */
+    func save() {
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+    }
+    
+    func truncate() {
+        TDEMNote.MR_truncateAll()
         
-        return result
+        self.save()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(TDENotification.UPDATE_NOTES, object: nil)
     }
     
     
@@ -59,16 +78,13 @@ class TDEModelManager: NSObject {
         }
     }
     
-    private var _notes: [TDENote]!
-    var notes: [TDENote]! {
-        set {
-            self._notes = newValue
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(TDENotification.UPDATE_NOTES, object: nil)
-        }
-        
+    var notes: [TDEMNote] {
         get {
-            return self._notes
+            if let notes = TDEMNote.MR_findAll() as? [TDEMNote] {
+                return notes
+            } else {
+                return []
+            }
         }
     }
 }

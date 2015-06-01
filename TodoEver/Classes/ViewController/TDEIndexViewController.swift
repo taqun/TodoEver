@@ -80,11 +80,7 @@ class TDEIndexViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let notes = TDEModelManager.sharedInstance.notes {
-            return notes.count
-        } else {
-            return 0
-        }
+        return TDEModelManager.sharedInstance.notes.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

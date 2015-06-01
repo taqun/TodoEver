@@ -63,17 +63,25 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
     /*
      * Private Method
      */
-    private func parseContents(note: TDENote, response: String) {
+    private func parseContents(note: TDEMNote, response: String) {
         if let data = response.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true) {
             let xml = SWXMLHash.parse(data)
             
+            var tasks: [TDEMTask] = []
+            let context = note.managedObjectContext
+
             let todos = xml["en-note"]["div"]
-            for todo in todos {
-                var task = TDETask()
-                task.parseData(todo)
+            let count = todos.all.count
+
+            for i in 0..<count {
+                var todo = todos[i]
+                var task = TDEMTask.MR_createInContext(context) as! TDEMTask
+                task.parseData(i, data: todo)
                 
-                note.appendTask(task)
+                tasks.append(task)
             }
+            
+            note.appendTasks(tasks)
         }
     }
 }

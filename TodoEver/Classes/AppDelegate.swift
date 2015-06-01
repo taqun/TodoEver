@@ -8,6 +8,8 @@
 
 import UIKit
 
+import MagicalRecord
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.whiteColor()
         
         self.configureEvernoteSDK()
+        self.configureCoreData()
         
         self.initViewController()
         
@@ -33,6 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let consumerSecret  = TDEConfig.ENSDK_CONSUMER_SECRET
         
         ENSession.setSharedSessionConsumerKey(consumerKey, consumerSecret: consumerSecret, optionalHost: ENSessionHostSandbox)
+    }
+    
+    private func configureCoreData() {
+        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("TodoEver.sqlite")
+        
+        if let notes = TDEMNote.MR_findAll() as? [TDEMNote] {
+            println(notes)
+        }
     }
     
     private func initViewController() {
@@ -60,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        TDEModelManager.sharedInstance.save()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -71,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        MagicalRecord.cleanUp()
     }
 
 

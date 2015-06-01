@@ -1,19 +1,23 @@
 //
-//  TDETask.swift
+//  TDEMTask.swift
 //  TodoEver
 //
-//  Created by taqun on 2015/06/01.
+//  Created by taqun on 2015/06/02.
 //  Copyright (c) 2015年 envoixapp. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 import SWXMLHash
 
-class TDETask: NSObject {
+@objc(TDEMTask)
+class TDEMTask: NSManagedObject {
     
-    var title: String!
-    var isChecked: Bool = false
+    @NSManaged var title: String
+    @NSManaged var isChecked: Bool
+    @NSManaged var index: Int
+    
     
     /*
     <?xml version="1.0" encoding="UTF-8"?>
@@ -34,8 +38,12 @@ class TDETask: NSObject {
     </en-note>
     */
     
-    func parseData(data: XMLIndexer) {
-        self.title = data.element?.text
+    func parseData(index:Int, data: XMLIndexer) {
+        self.index = index
+        
+        if let titleValue = data.element?.text {
+            self.title = titleValue
+        }
         
         if var checkedValue = data["en-todo"].element?.attributes["checked"] {
             if checkedValue == "true" {

@@ -10,13 +10,13 @@ import UIKit
 
 class TDETaskListViewController: UITableViewController {
     
-    private var noteData: TDENote!
+    private var noteData: TDEMNote!
     
     
     /*
      * Initialize
      */
-    init(noteData: TDENote) {
+    init(noteData: TDEMNote) {
         super.init(style: .Plain)
         
         self.noteData = noteData
@@ -44,6 +44,8 @@ class TDETaskListViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.title = self.noteData.title
+        
+        println(self.noteData.guid)
     }
 
     
@@ -55,13 +57,13 @@ class TDETaskListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.noteData.tasks.count
+        return self.noteData.orderedTasks.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskTableCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let task = self.noteData.tasks[indexPath.row]
+        let task = self.noteData.orderedTasks[indexPath.row]
         
         cell.textLabel?.text = task.title
         if task.isChecked {
