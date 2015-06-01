@@ -35,10 +35,13 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem systemItem="refresh" id="zRd-J5-5wY"/>
+                        <barButtonItem systemItem="flexibleSpace" id="dGh-QG-9B8"/>
+                        <barButtonItem systemItem="stop" id="2xR-RL-867"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="__btnDelete" destination="2xR-RL-867" id="8EB-Ng-6zN"/>
                         <outlet property="__btnRefresh" destination="zRd-J5-5wY" id="IEN-86-fiA"/>
                     </connections>
                 </tableViewController>

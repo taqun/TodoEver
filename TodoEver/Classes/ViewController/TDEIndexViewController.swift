@@ -15,10 +15,14 @@ class TDEIndexViewController: UITableViewController {
      * Debug
      */
     @IBOutlet var __btnRefresh: UIBarButtonItem!
+    @IBOutlet var __btnDelete: UIBarButtonItem!
     
     @objc private func __didBtnRefresh() {
-        //TDEEvernoteController.sharedInstance.getNotesWithTodoEverTag()
         TDEEvernoteController.sharedInstance.sync()
+    }
+    
+    @objc private func __didBtnDelete() {
+        TDEModelManager.sharedInstance.truncate()
     }
     
     
@@ -30,6 +34,9 @@ class TDEIndexViewController: UITableViewController {
         
         __btnRefresh.target = self
         __btnRefresh.action = Selector("__didBtnRefresh")
+        
+        __btnDelete.target = self
+        __btnDelete.action = Selector("__didBtnDelete")
     }
     
     
