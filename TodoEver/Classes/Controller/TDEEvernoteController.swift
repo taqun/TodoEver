@@ -106,8 +106,11 @@ class TDEEvernoteController: NSObject {
         var operations: [NSOperation] = []
         
         for note in notes {
-            var op = TDEUpdateNoteOperation(note: note)
-            operations.append(op)
+            
+            if note.isChanged {
+                var op = TDEUpdateNoteOperation(note: note)
+                operations.append(op)
+            }
         }
         
         self.queue.addOperations(operations, waitUntilFinished: false)

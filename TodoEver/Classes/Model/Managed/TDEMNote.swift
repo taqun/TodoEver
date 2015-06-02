@@ -35,6 +35,19 @@ class TDEMNote: NSManagedObject {
     }
     
     func generateEDAMNote() -> (EDAMNote) {
+        var edamNote = EDAMNote()
+        edamNote.title      = self.title
+        edamNote.guid       = self.guid
+        edamNote.content    = self.generateContent()
+        
+        return edamNote
+    }
+    
+    
+    /*
+     * Private Method
+     */
+    func generateContent() -> (String) {
         var writer = ENMLWriter()
         writer.startDocument()
         
@@ -44,12 +57,7 @@ class TDEMNote: NSManagedObject {
         
         writer.endDocument()
         
-        var edamNote = EDAMNote()
-        edamNote.title      = self.title
-        edamNote.guid       = self.guid
-        edamNote.content    = writer.contents
-        
-        return edamNote
+        return writer.contents
     }
     
     
@@ -63,6 +71,16 @@ class TDEMNote: NSManagedObject {
                 return array
             } else {
                 return []
+            }
+        }
+    }
+    
+    var isChanged: Bool {
+        get {
+            if self.content != self.generateContent() {
+                return true
+            } else {
+                return false
             }
         }
     }
