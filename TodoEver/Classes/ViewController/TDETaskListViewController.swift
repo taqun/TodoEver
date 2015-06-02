@@ -44,8 +44,6 @@ class TDETaskListViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.title = self.noteData.title
-        
-        println(self.noteData.guid)
     }
 
     

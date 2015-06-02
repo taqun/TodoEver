@@ -27,9 +27,6 @@ class TDEListNotesOperation: TDEConcurrentOperation {
             if let noteMetas = response as? [EDAMNoteMetadata] {
                 for noteMeta in noteMetas {
                     
-                    println(noteMeta.guid)
-                    println(TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid))
-                    
                     if let localNote = TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid) {
                         println("\(localNote.title) is exsist")
                     } else {

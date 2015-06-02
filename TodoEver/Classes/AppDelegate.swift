@@ -40,10 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configureCoreData() {
         MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("TodoEver.sqlite")
-        
-        if let notes = TDEMNote.MR_findAll() as? [TDEMNote] {
-            println(notes)
-        }
     }
     
     private func initViewController() {
