@@ -73,4 +73,17 @@ class TDETaskListViewController: UITableViewController {
         return cell
     }
     
+    
+    /*
+     * UITableViewDelegate
+     */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var task = self.noteData.orderedTasks[indexPath.row]
+        task.isChecked = !task.isChecked
+        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    }
+    
 }

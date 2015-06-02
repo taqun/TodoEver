@@ -16,6 +16,7 @@ class TDEMNote: NSManagedObject {
     
     @NSManaged var title: String
     @NSManaged var guid: String
+    @NSManaged var content: String
     
     @NSManaged var tasks: NSMutableSet
     
@@ -31,6 +32,24 @@ class TDEMNote: NSManagedObject {
     func appendTasks(tasks: [TDEMTask]) {
         let taskSet = NSMutableSet(array: tasks)
         self.tasks = taskSet
+    }
+    
+    func generateEDAMNote() -> (EDAMNote) {
+        var writer = ENMLWriter()
+        writer.startDocument()
+        
+        for task in self.orderedTasks {
+            writer.writeRawString(task.htmlString)
+        }
+        
+        writer.endDocument()
+        
+        var edamNote = EDAMNote()
+        edamNote.title      = self.title
+        edamNote.guid       = self.guid
+        edamNote.content    = writer.contents
+        
+        return edamNote
     }
     
     

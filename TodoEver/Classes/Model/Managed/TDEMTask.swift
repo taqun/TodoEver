@@ -18,7 +18,6 @@ class TDEMTask: NSManagedObject {
     @NSManaged var isChecked: Bool
     @NSManaged var index: Int
     
-    
     /*
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
@@ -29,15 +28,12 @@ class TDEMTask: NSManagedObject {
         <div>
             <en-todo></en-todo>Task B
         </div>
-        <div>
-            <en-todo checked="true"></en-todo>たすくC
-        </div>
-        <div>
-            <en-todo></en-todo>タスクD
-        </div>
     </en-note>
     */
     
+    /*
+     * Public Method
+     */
     func parseData(index:Int, data: XMLIndexer) {
         self.index = index
         
@@ -56,4 +52,13 @@ class TDEMTask: NSManagedObject {
         }
     }
     
+    
+    /*
+     * Getter, Setter
+     */
+    var htmlString: String {
+        get {
+            return "<div><en-todo checked=\"\(self.isChecked)\"></en-todo>\(self.title)</div>"
+        }
+    }
 }

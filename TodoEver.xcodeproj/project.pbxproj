@@ -23,6 +23,7 @@
 		31FAB2BC1B1AEDE300404308 /* TDEGetNoteContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */; };
 		31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */; };
 		31FAB2C51B1D7FAC00404308 /* TDEMTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C41B1D7FAC00404308 /* TDEMTask.swift */; };
+		31FAB2C71B1DC7D200404308 /* TDEUpdateNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C61B1DC7D200404308 /* TDEUpdateNoteOperation.swift */; };
 		408D33D31B1C064100D2D945 /* TodoEver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D11B1C064100D2D945 /* TodoEver.xcdatamodeld */; };
 		408D33D61B1C075E00D2D945 /* TDEMNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D51B1C075E00D2D945 /* TDEMNote.swift */; };
 		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
@@ -67,6 +68,7 @@
 		31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEGetNoteContentOperation.swift; path = Classes/Operation/TDEGetNoteContentOperation.swift; sourceTree = "<group>"; };
 		31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEDebugger.swift; path = Classes/Util/TDEDebugger.swift; sourceTree = "<group>"; };
 		31FAB2C41B1D7FAC00404308 /* TDEMTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMTask.swift; path = Classes/Model/Managed/TDEMTask.swift; sourceTree = "<group>"; };
+		31FAB2C61B1DC7D200404308 /* TDEUpdateNoteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEUpdateNoteOperation.swift; path = Classes/Operation/TDEUpdateNoteOperation.swift; sourceTree = "<group>"; };
 		408D33D21B1C064100D2D945 /* TodoEver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoEver.xcdatamodel; sourceTree = "<group>"; };
 		408D33D51B1C075E00D2D945 /* TDEMNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMNote.swift; path = Classes/Model/Managed/TDEMNote.swift; sourceTree = "<group>"; };
 		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				31FAB2B71B19CDF900404308 /* TDEGetTodoEverTagOperation.swift */,
 				31FAB2B91B1ABB4600404308 /* TDEGetAllNoteContentsOperation.swift */,
 				31FAB2BB1B1AEDE300404308 /* TDEGetNoteContentOperation.swift */,
+				31FAB2C61B1DC7D200404308 /* TDEUpdateNoteOperation.swift */,
 			);
 			name = Operation;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				31FAB2B21B1993B200404308 /* TDEListNotesOperation.swift in Sources */,
 				31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */,
 				40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */,
+				31FAB2C71B1DC7D200404308 /* TDEUpdateNoteOperation.swift in Sources */,
 				3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */,
 				3135A62C1B14D74D00BA6689 /* TDEConfig.swift in Sources */,
 				31FAB2C51B1D7FAC00404308 /* TDEMTask.swift in Sources */,

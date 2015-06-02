@@ -12,7 +12,10 @@ class TDEEvernoteController: NSObject {
     
     static var sharedInstance: TDEEvernoteController = TDEEvernoteController()
     
-    var queue: NSOperationQueue!
+    private var queue: NSOperationQueue!
+    
+    private var isSyncing: Bool = false
+    private var isUpdating: Bool = false
     
     
     /*
@@ -48,16 +51,31 @@ class TDEEvernoteController: NSObject {
         TDEDebugger.log("sync")
         TDEDebugger.log("==============")
         
+        self.isSyncing = true
+        
         self.getNotesWithTodoEverTag()
     }
     
     private func syncComplete() {
-        var notes = TDEModelManager.sharedInstance.notes
+        self.isSyncing = false
         
-        for note in notes {
-            //println(note.title)
-            //println(note.contents)
-        }
+        self.update()
+    }
+    
+    
+    /*
+     * Update
+     */
+    func update() {
+        self.isUpdating = true
+        
+        self.updateNotes()
+    }
+    
+    private func updateComplete() {
+        self.isUpdating = false
+        
+        
     }
     
     
@@ -83,6 +101,18 @@ class TDEEvernoteController: NSObject {
         self.queue.addOperations(operations, waitUntilFinished: false)
     }
     
+    private func updateNotes() {
+        let notes = TDEModelManager.sharedInstance.notes
+        var operations: [NSOperation] = []
+        
+        for note in notes {
+            var op = TDEUpdateNoteOperation(note: note)
+            operations.append(op)
+        }
+        
+        self.queue.addOperations(operations, waitUntilFinished: false)
+    }
+    
     
     /*
      * KVO
@@ -94,7 +124,13 @@ class TDEEvernoteController: NSObject {
                 
                 if self.queue.operationCount == 0 {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.syncComplete()
+                        if self.isSyncing {
+                            self.syncComplete()
+                        }
+                        
+                        if self.isUpdating {
+                            self.updateComplete()
+                        }
                     })
                 }
             }
