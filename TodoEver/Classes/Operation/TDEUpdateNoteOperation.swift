@@ -10,10 +10,12 @@ import UIKit
 
 class TDEUpdateNoteOperation: TDEConcurrentOperation {
     
-    private var note: TDEMNote
+    private var guid: EDAMGuid
     
-    init(note: TDEMNote) {
-        self.note = note
+    private var edamNoteToUpdate: EDAMNote!
+    
+    init(guid: EDAMGuid) {
+        self.guid = guid
         
         super.init()
     }
@@ -27,9 +29,13 @@ class TDEUpdateNoteOperation: TDEConcurrentOperation {
         let semaphore = dispatch_semaphore_create(0)
         
         let noteStore = ENSession.sharedSession().primaryNoteStore()
-        var edamNote = note.generateEDAMNote()
         
-        noteStore.updateNote(edamNote, success: { (edamNote) -> Void in
+        let note = TDEModelManager.sharedInstance.getNoteByGuid(self.guid)
+        edamNoteToUpdate = note.generateEDAMNote()
+        
+        noteStore.updateNote(edamNoteToUpdate, success: { (edamNote) -> Void in
+            
+            self.updateNote(edamNote)
             
             dispatch_semaphore_signal(semaphore)
             
@@ -44,4 +50,14 @@ class TDEUpdateNoteOperation: TDEConcurrentOperation {
         self.complete()
     }
     
+    
+    /*
+     * Private Method
+     */
+    func updateNote(edamNote: EDAMNote) {
+        let note = TDEModelManager.sharedInstance.getNoteByGuid(self.guid)
+        
+        note.usn = edamNote.updateSequenceNum
+        note.content = self.edamNoteToUpdate.content
+    }
 }

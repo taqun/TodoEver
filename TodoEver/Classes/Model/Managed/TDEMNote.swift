@@ -17,9 +17,10 @@ class TDEMNote: NSManagedObject {
     @NSManaged var title: String
     @NSManaged var guid: String
     @NSManaged var content: String
-    @NSManaged var usn: Int
+    @NSManaged var usn: NSNumber
     
     @NSManaged var needsToSync: Bool
+    @NSManaged var remoteUsn: NSNumber
     
     @NSManaged var tasks: NSMutableSet
     
@@ -31,9 +32,7 @@ class TDEMNote: NSManagedObject {
         self.title  = metaData.title
         self.guid   = metaData.guid
         
-        if let usn = metaData.updateSequenceNum as? Int {
-            self.usn = usn
-        }
+        self.usn = metaData.updateSequenceNum
     }
     
     func appendTasks(tasks: [TDEMTask]) {

@@ -74,8 +74,6 @@ class TDEEvernoteController: NSObject {
     
     private func updateComplete() {
         self.isUpdating = false
-        
-        
     }
     
     
@@ -106,9 +104,8 @@ class TDEEvernoteController: NSObject {
         var operations: [NSOperation] = []
         
         for note in notes {
-            
             if note.isChanged {
-                var op = TDEUpdateNoteOperation(note: note)
+                var op = TDEUpdateNoteOperation(guid: note.guid)
                 operations.append(op)
             }
         }

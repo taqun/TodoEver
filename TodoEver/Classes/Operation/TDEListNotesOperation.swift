@@ -29,13 +29,15 @@ class TDEListNotesOperation: TDEConcurrentOperation {
                 for noteMeta in noteMetas {
                     
                     if let localNote = TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid) {
-                        if let usn = noteMeta.updateSequenceNum as? Int {
-                            println("Remote USN: \(usn)")
-                            println("Local USN: \(localNote.usn)")
+                        if let usn = noteMeta.updateSequenceNum {
+                            println(localNote.title)
+                            println("   Remote USN: \(usn)")
+                            println("   Local USN: \(localNote.usn)")
                             
-                            if usn > localNote.usn {
-                                println("   \(localNote.title) should be update.")
+                            if usn.intValue > localNote.usn.intValue {
+                                println("   => \(localNote.title) should be update.")
                                 localNote.needsToSync = true
+                                localNote.remoteUsn = usn
                             }
                         }
                         
@@ -43,6 +45,7 @@ class TDEListNotesOperation: TDEConcurrentOperation {
                         var note = TDEMNote.MR_createEntity() as! TDEMNote
                         note.parseMetaData(noteMeta)
                         note.needsToSync = true
+                        note.remoteUsn = 0
                     }
 
                 }

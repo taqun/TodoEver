@@ -36,6 +36,9 @@ class TDEGetAllNoteContentsOperation: TDEConcurrentOperation {
         var operations: [NSOperation] = []
         
         for note in notes {
+            println(note.title)
+            println(note.needsToSync)
+            
             if note.needsToSync {
                 var getContentOp = TDEGetNoteContentOperation(guid: note.guid)
                 operations.append(getContentOp)

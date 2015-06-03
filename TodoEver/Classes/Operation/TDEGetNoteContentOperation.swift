@@ -39,11 +39,10 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
         noteStore.getNoteContentWithGuid(guid, success: { (response) -> Void in
             
             if var note = TDEModelManager.sharedInstance.getNoteByGuid(self.guid) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                    self.parseContents(note, response: response)
+
+                self.parseContents(note.guid, response: response)
                     
-                    dispatch_semaphore_signal(semaphore)
-                })
+                dispatch_semaphore_signal(semaphore)
                 
             } else {
                 dispatch_semaphore_signal(semaphore)
@@ -63,7 +62,9 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
     /*
      * Private Method
      */
-    private func parseContents(note: TDEMNote, response: String) {
+    private func parseContents(guid: EDAMGuid, response: String) {
+        var note = TDEModelManager.sharedInstance.getNoteByGuid(guid)
+        
         if let data = response.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true) {
             let xml = SWXMLHash.parse(data)
             
@@ -83,7 +84,12 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
             
             note.content = response
             note.appendTasks(tasks)
+            
             note.needsToSync = false
+            if note.remoteUsn != 0 {
+                note.usn = note.remoteUsn
+                note.remoteUsn = 0
+            }
         }
     }
 }
