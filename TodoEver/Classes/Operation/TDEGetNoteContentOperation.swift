@@ -83,6 +83,7 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
             
             note.content = response
             note.appendTasks(tasks)
+            note.needsToSync = false
         }
     }
 }

@@ -17,6 +17,9 @@ class TDEMNote: NSManagedObject {
     @NSManaged var title: String
     @NSManaged var guid: String
     @NSManaged var content: String
+    @NSManaged var usn: Int
+    
+    @NSManaged var needsToSync: Bool
     
     @NSManaged var tasks: NSMutableSet
     
@@ -27,6 +30,10 @@ class TDEMNote: NSManagedObject {
     func parseMetaData(metaData: EDAMNoteMetadata) {
         self.title  = metaData.title
         self.guid   = metaData.guid
+        
+        if let usn = metaData.updateSequenceNum as? Int {
+            self.usn = usn
+        }
     }
     
     func appendTasks(tasks: [TDEMTask]) {

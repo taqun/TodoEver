@@ -3,7 +3,9 @@
     <entity name="TDEMNote" representedClassName="TDEMNote" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="needsToSync" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TDEMTask" inverseName="note" inverseEntity="TDEMTask" syncable="YES"/>
     </entity>
     <entity name="TDEMTask" representedClassName="TDEMTask" syncable="YES">
@@ -13,7 +15,7 @@
         <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TDEMNote" inverseName="tasks" inverseEntity="TDEMNote" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TDEMNote" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="TDEMNote" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="TDEMTask" positionX="-63" positionY="0" width="128" height="105"/>
     </elements>
 </model>

@@ -36,18 +36,27 @@ class TDEGetAllNoteContentsOperation: TDEConcurrentOperation {
         var operations: [NSOperation] = []
         
         for note in notes {
-            var getContentOp = TDEGetNoteContentOperation(guid: note.guid)
-            operations.append(getContentOp)
+            if note.needsToSync {
+                var getContentOp = TDEGetNoteContentOperation(guid: note.guid)
+                operations.append(getContentOp)
+            }
         }
         
-        self.queue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
-        self.queue.addOperations(operations, waitUntilFinished: false)
+        if operations.count == 0 {
+            
+            self.complete()
+            
+        } else {
         
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+            self.queue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
+            self.queue.addOperations(operations, waitUntilFinished: false)
         
-        self.queue.removeObserver(self, forKeyPath: "operations")
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         
-        self.complete()
+            self.queue.removeObserver(self, forKeyPath: "operations")
+        
+            self.complete()
+        }
     }
     
     /*

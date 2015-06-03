@@ -20,6 +20,7 @@ class TDEListNotesOperation: TDEConcurrentOperation {
         
         var resultSpec = EDAMNotesMetadataResultSpec()
         resultSpec.includeTitle = true
+        resultSpec.includeUpdateSequenceNum = true
         
         let noteStore = ENSession.sharedSession().primaryNoteStore()
         noteStore.findNotesMetadataWithFilter(noteFilter, maxResults: 100, resultSpec: resultSpec, success: { (response) -> Void in
@@ -28,10 +29,20 @@ class TDEListNotesOperation: TDEConcurrentOperation {
                 for noteMeta in noteMetas {
                     
                     if let localNote = TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid) {
-                        println("\(localNote.title) is exsist")
+                        if let usn = noteMeta.updateSequenceNum as? Int {
+                            println("Remote USN: \(usn)")
+                            println("Local USN: \(localNote.usn)")
+                            
+                            if usn > localNote.usn {
+                                println("   \(localNote.title) should be update.")
+                                localNote.needsToSync = true
+                            }
+                        }
+                        
                     } else {
                         var note = TDEMNote.MR_createEntity() as! TDEMNote
                         note.parseMetaData(noteMeta)
+                        note.needsToSync = true
                     }
 
                 }
