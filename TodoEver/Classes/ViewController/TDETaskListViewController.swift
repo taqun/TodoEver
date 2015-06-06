@@ -37,6 +37,48 @@ class TDETaskListViewController: UITableViewController {
     }
     
     
+    
+    /*
+     * Private Method
+     */
+    
+    @objc private func addTask() {
+        var alertController = UIAlertController(title: "Add new task", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            if let textFields = alertController.textFields as? [UITextField] {
+                if textFields.count > 0 {
+                    let textField = textFields[0]
+                    
+                    if var task = TDEMTask.MR_createEntity() as? TDEMTask {
+                        task.title = textField.text
+                        task.index = self.noteData.tasks.count
+                        
+                        println(task.title)
+                        println(task.index)
+                        
+                        self.noteData.addTask(task)
+                        
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+            
+        }))
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            
+        }
+        
+        self.presentViewController(alertController, animated: true) { () -> Void in
+            
+        }
+    }
+    
+    
     /*
      * UIViewController Method
      */
@@ -44,6 +86,9 @@ class TDETaskListViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.title = self.noteData.title
+        
+        let btnAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: Selector("addTask"))
+        self.navigationItem.rightBarButtonItem = btnAdd
     }
 
     

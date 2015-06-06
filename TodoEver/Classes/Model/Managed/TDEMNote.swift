@@ -40,6 +40,10 @@ class TDEMNote: NSManagedObject {
         self.tasks = taskSet
     }
     
+    func addTask(task: TDEMTask) {
+        self.tasks.addObject(task)
+    }
+    
     func generateEDAMNote() -> (EDAMNote) {
         var edamNote = EDAMNote()
         edamNote.title      = self.title
