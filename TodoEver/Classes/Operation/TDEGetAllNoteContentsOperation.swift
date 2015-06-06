@@ -32,12 +32,12 @@ class TDEGetAllNoteContentsOperation: TDEConcurrentOperation {
         
         self.semaphore = dispatch_semaphore_create(0)
         
-        let notes = TDEModelManager.sharedInstance.notes
+        let notes = TDEModelManager.sharedInstance.getNotesInDefaultContext()
         var operations: [NSOperation] = []
         
         for note in notes {
-            println(note.title)
-            println(note.needsToSync)
+            println(" note: " + note.title)
+            println("   needToSync: \(note.needsToSync)")
             
             if note.needsToSync {
                 var getContentOp = TDEGetNoteContentOperation(guid: note.guid)

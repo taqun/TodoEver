@@ -18,9 +18,21 @@ class TDEModelManager: NSObject {
     /*
      * Public Method
      */
+    func getNotesInDefaultContext() -> ([TDEMNote]) {
+        let context = NSManagedObjectContext.MR_defaultContext()
+        
+        if let notes = TDEMNote.MR_findAllInContext(context) as? [TDEMNote] {
+            return notes
+        } else {
+            return []
+        }
+    }
+    
     func getNoteByGuid(guid: EDAMGuid) -> (TDEMNote!) {
         let predicate = NSPredicate(format: "guid = %@", guid)
-        if let notes = TDEMNote.MR_findAllWithPredicate(predicate) as? [TDEMNote] {
+        let context = NSManagedObjectContext.MR_defaultContext()
+        
+        if let notes = TDEMNote.MR_findAllWithPredicate(predicate, inContext: context) as? [TDEMNote] {
             if notes.count > 0 {
                 return notes[0]
             } else {

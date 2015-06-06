@@ -30,7 +30,7 @@ class TDEListNotesOperation: TDEConcurrentOperation {
                     
                     if let localNote = TDEModelManager.sharedInstance.getNoteByGuid(noteMeta.guid) {
                         if let usn = noteMeta.updateSequenceNum {
-                            println(localNote.title)
+                            println(" note: " + localNote.title)
                             println("   Remote USN: \(usn)")
                             println("   Local USN: \(localNote.usn)")
                             
