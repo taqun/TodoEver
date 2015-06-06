@@ -54,16 +54,18 @@ class TDEMNote: NSManagedObject {
      * Private Method
      */
     func generateContent() -> (String) {
-        var writer = ENMLWriter()
-        writer.startDocument()
+        var content = ""
+        content += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        content += "<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">\n"
+        content += "<en-note>"
         
         for task in self.orderedTasks {
-            writer.writeRawString(task.htmlString)
+            content += task.htmlString
         }
         
-        writer.endDocument()
+        content += "</en-note>"
         
-        return writer.contents
+        return content
     }
     
     

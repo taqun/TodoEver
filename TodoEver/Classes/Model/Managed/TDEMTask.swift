@@ -58,7 +58,11 @@ class TDEMTask: NSManagedObject {
      */
     var htmlString: String {
         get {
-            return "<div><en-todo checked=\"\(self.isChecked)\"></en-todo>\(self.title)</div>"
+            if self.isChecked {
+                return "<div><en-todo checked=\"\(self.isChecked)\"></en-todo>\(self.title)</div>"
+            } else {
+                return "<div><en-todo></en-todo>\(self.title)</div>"
+            }
         }
     }
 }
