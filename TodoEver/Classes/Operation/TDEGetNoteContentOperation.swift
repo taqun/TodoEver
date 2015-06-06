@@ -90,11 +90,6 @@ class TDEGetNoteContentOperation: TDEConcurrentOperation {
                 note.usn = note.remoteUsn
                 note.remoteUsn = 0
             }
-            
-            println(" note: \(note.title), get contents")
-            println("   \(note.isChanged)")
-            println("   \(note.content)")
-            println("   \(note.generateContent())")
         }
     }
 }
