@@ -44,6 +44,14 @@ class TDEMNote: NSManagedObject {
         self.tasks.addObject(task)
     }
     
+    func removeTask(index: Int) {
+        var tasks = self.orderedTasks
+        tasks.removeAtIndex(index)
+        
+        let taskSet = NSMutableSet(array: tasks)
+        self.tasks = taskSet
+    }
+    
     func generateEDAMNote() -> (EDAMNote) {
         var edamNote = EDAMNote()
         edamNote.title      = self.title
