@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        let isInTests = (NSClassFromString("XCTest") != nil)
+        if isInTests {
+            return true
+        }
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
         
@@ -80,6 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
+        let isInTests = (NSClassFromString("XCTest") != nil)
+        if isInTests {
+            return
+        }
+        
         MagicalRecord.cleanUp()
     }
 

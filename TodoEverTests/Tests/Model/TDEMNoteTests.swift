@@ -20,9 +20,30 @@ class TDEMNoteTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
-        
         MagicalRecord.cleanUp()
+        
+        super.tearDown()
+    }
+    
+    
+    /*
+     * Private Method
+     */
+    private func createNote() -> (TDEMNote) {
+        let context = NSManagedObjectContext.MR_defaultContext()
+        let entity = NSEntityDescription.entityForName("TDEMNote", inManagedObjectContext: context)!
+        let note = TDEMNote(entity: entity, insertIntoManagedObjectContext: context)
+        
+        return note
+    }
+    
+    
+    /*
+     * Tests
+     */
+    func testCreateEntity() {
+        let note = self.createNote()
+        XCTAssertNotNil(note, "Failed to create TDEMNote")
     }
     
 }
