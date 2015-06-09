@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31232E331B14B37B007C28E3 /* TodoEverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31232E321B14B37B007C28E3 /* TodoEverTests.swift */; };
 		3135A6151B14B65B00BA6689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135A6141B14B65B00BA6689 /* AppDelegate.swift */; };
 		3135A6181B14B7D400BA6689 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3135A6171B14B7D400BA6689 /* Images.xcassets */; };
 		3135A61C1B14BDDA00BA6689 /* ENSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61A1B14BDDA00BA6689 /* ENSDK.framework */; };
@@ -24,6 +23,13 @@
 		31FAB2BF1B1AEFD300404308 /* TDEDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */; };
 		31FAB2C51B1D7FAC00404308 /* TDEMTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C41B1D7FAC00404308 /* TDEMTask.swift */; };
 		31FAB2C71B1DC7D200404308 /* TDEUpdateNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C61B1DC7D200404308 /* TDEUpdateNoteOperation.swift */; };
+		4002BF441B26930500A5046E /* Pods-TodoEver.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4002BF421B26930500A5046E /* Pods-TodoEver.debug.xcconfig */; };
+		4002BF451B26930500A5046E /* Pods-TodoEver.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4002BF431B26930500A5046E /* Pods-TodoEver.release.xcconfig */; };
+		4002BF461B26935700A5046E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A6201B14BE1500BA6689 /* libxml2.dylib */; };
+		4002BF471B26950500A5046E /* TDEMNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D51B1C075E00D2D945 /* TDEMNote.swift */; };
+		4002BF481B26952600A5046E /* TDEMTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB2C41B1D7FAC00404308 /* TDEMTask.swift */; };
+		4002BF4A1B26956600A5046E /* TDEMNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4002BF491B26956600A5046E /* TDEMNoteTests.swift */; };
+		404FD5051B2691E9006813B8 /* ENSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61A1B14BDDA00BA6689 /* ENSDK.framework */; };
 		408D33D31B1C064100D2D945 /* TodoEver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D11B1C064100D2D945 /* TodoEver.xcdatamodeld */; };
 		408D33D61B1C075E00D2D945 /* TDEMNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D51B1C075E00D2D945 /* TDEMNote.swift */; };
 		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
@@ -33,7 +39,8 @@
 		40AEF7811B157695004DEE74 /* TDENotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7801B157695004DEE74 /* TDENotification.swift */; };
 		40AEF7831B1576F9004DEE74 /* IndexViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */; };
 		40AEF7851B15771B004DEE74 /* TDEIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */; };
-		52A00FFB0345E140594CA189 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEFDCA57A59E6ED30FDA657 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		94C38BDE39B8DEEF3EBC5858 /* Pods_TodoEverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1A40B98B8066AA043BDC2C /* Pods_TodoEverTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA6DC8A2045425768BA93AC2 /* Pods_TodoEver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFECAB52770B66771428C0C /* Pods_TodoEver.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +58,6 @@
 		31232E1B1B14B37B007C28E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31232E2C1B14B37B007C28E3 /* TodoEverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoEverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31232E311B14B37B007C28E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31232E321B14B37B007C28E3 /* TodoEverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEverTests.swift; sourceTree = "<group>"; };
 		3135A6141B14B65B00BA6689 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		3135A6171B14B7D400BA6689 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
 		3135A61A1B14BDDA00BA6689 /* ENSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ENSDK.framework; path = Frameworks/ENSDK.framework; sourceTree = "<group>"; };
@@ -69,6 +75,10 @@
 		31FAB2BE1B1AEFD300404308 /* TDEDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEDebugger.swift; path = Classes/Util/TDEDebugger.swift; sourceTree = "<group>"; };
 		31FAB2C41B1D7FAC00404308 /* TDEMTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMTask.swift; path = Classes/Model/Managed/TDEMTask.swift; sourceTree = "<group>"; };
 		31FAB2C61B1DC7D200404308 /* TDEUpdateNoteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEUpdateNoteOperation.swift; path = Classes/Operation/TDEUpdateNoteOperation.swift; sourceTree = "<group>"; };
+		4002BF421B26930500A5046E /* Pods-TodoEver.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-TodoEver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodoEver/Pods-TodoEver.debug.xcconfig"; sourceTree = "<group>"; };
+		4002BF431B26930500A5046E /* Pods-TodoEver.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-TodoEver.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoEver/Pods-TodoEver.release.xcconfig"; sourceTree = "<group>"; };
+		4002BF491B26956600A5046E /* TDEMNoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMNoteTests.swift; path = Tests/Model/TDEMNoteTests.swift; sourceTree = "<group>"; };
+		404FD5061B2691F5006813B8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		408D33D21B1C064100D2D945 /* TodoEver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoEver.xcdatamodel; sourceTree = "<group>"; };
 		408D33D51B1C075E00D2D945 /* TDEMNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMNote.swift; path = Classes/Model/Managed/TDEMNote.swift; sourceTree = "<group>"; };
 		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
@@ -79,8 +89,10 @@
 		40AEF7821B1576F9004DEE74 /* IndexViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = IndexViewController.storyboard; path = Assets/IndexViewController.storyboard; sourceTree = "<group>"; };
 		40AEF7841B15771B004DEE74 /* TDEIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEIndexViewController.swift; path = Classes/ViewController/TDEIndexViewController.swift; sourceTree = "<group>"; };
 		4AEFDCA57A59E6ED30FDA657 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D601358337C79FA12E0024E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4D42C9EB5F2FC3B98018F82A /* Pods-TodoEverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoEverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodoEverTests/Pods-TodoEverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79EDDC2FC7632266673615FC /* Pods-TodoEverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoEverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoEverTests/Pods-TodoEverTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCFECAB52770B66771428C0C /* Pods_TodoEver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoEver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1A40B98B8066AA043BDC2C /* Pods_TodoEverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoEverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +103,7 @@
 				3135A6211B14BE1500BA6689 /* libxml2.dylib in Frameworks */,
 				3135A61F1B14BE0B00BA6689 /* MobileCoreServices.framework in Frameworks */,
 				3135A61C1B14BDDA00BA6689 /* ENSDK.framework in Frameworks */,
-				52A00FFB0345E140594CA189 /* Pods.framework in Frameworks */,
+				FA6DC8A2045425768BA93AC2 /* Pods_TodoEver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4002BF461B26935700A5046E /* libxml2.dylib in Frameworks */,
+				404FD5051B2691E9006813B8 /* ENSDK.framework in Frameworks */,
+				94C38BDE39B8DEEF3EBC5858 /* Pods_TodoEverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +155,7 @@
 		31232E2F1B14B37B007C28E3 /* TodoEverTests */ = {
 			isa = PBXGroup;
 			children = (
-				31232E321B14B37B007C28E3 /* TodoEverTests.swift */,
+				404FD5011B26909D006813B8 /* Tests */,
 				31232E301B14B37B007C28E3 /* Supporting Files */,
 			);
 			path = TodoEverTests;
@@ -227,6 +242,22 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		404FD5011B26909D006813B8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				404FD5021B2690EC006813B8 /* Model */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		404FD5021B2690EC006813B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4002BF491B26956600A5046E /* TDEMNoteTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		408D33D41B1C074400D2D945 /* Managed */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +314,10 @@
 		449B8E8BDB03A35ADDB49A1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				404FD5061B2691F5006813B8 /* Pods.framework */,
 				4AEFDCA57A59E6ED30FDA657 /* Pods.framework */,
+				CCFECAB52770B66771428C0C /* Pods_TodoEver.framework */,
+				DE1A40B98B8066AA043BDC2C /* Pods_TodoEverTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,8 +325,10 @@
 		6F0A9402845079A9566D1EDB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D601358337C79FA12E0024E /* Pods.debug.xcconfig */,
-				E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */,
+				4002BF421B26930500A5046E /* Pods-TodoEver.debug.xcconfig */,
+				4002BF431B26930500A5046E /* Pods-TodoEver.release.xcconfig */,
+				4D42C9EB5F2FC3B98018F82A /* Pods-TodoEverTests.debug.xcconfig */,
+				79EDDC2FC7632266673615FC /* Pods-TodoEverTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -324,9 +360,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31232E391B14B37B007C28E3 /* Build configuration list for PBXNativeTarget "TodoEverTests" */;
 			buildPhases = (
+				25538B41FA7C8EB4470CF66B /* Check Pods Manifest.lock */,
 				31232E281B14B37B007C28E3 /* Sources */,
 				31232E291B14B37B007C28E3 /* Frameworks */,
 				31232E2A1B14B37B007C28E3 /* Resources */,
+				200D655B977C23C97425F0FF /* Embed Pods Frameworks */,
+				C9FCE52AA080F1CA5E419647 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,8 +419,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4002BF441B26930500A5046E /* Pods-TodoEver.debug.xcconfig in Resources */,
 				40AEF7831B1576F9004DEE74 /* IndexViewController.storyboard in Resources */,
 				40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */,
+				4002BF451B26930500A5046E /* Pods-TodoEver.release.xcconfig in Resources */,
 				3135A6181B14B7D400BA6689 /* Images.xcassets in Resources */,
 				3135A61D1B14BDDA00BA6689 /* ENSDKResources.bundle in Resources */,
 			);
@@ -409,7 +450,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoEver/Pods-TodoEver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		200D655B977C23C97425F0FF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoEverTests/Pods-TodoEverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25538B41FA7C8EB4470CF66B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		49055675E0B1CD18F3CEB9D7 /* Copy Pods Resources */ = {
@@ -424,7 +495,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoEver/Pods-TodoEver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9FCE52AA080F1CA5E419647 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoEverTests/Pods-TodoEverTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E733AB5AFAD79A484886B43B /* Check Pods Manifest.lock */ = {
@@ -474,7 +560,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31232E331B14B37B007C28E3 /* TodoEverTests.swift in Sources */,
+				4002BF4A1B26956600A5046E /* TDEMNoteTests.swift in Sources */,
+				4002BF471B26950500A5046E /* TDEMNote.swift in Sources */,
+				4002BF481B26952600A5046E /* TDEMTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +660,7 @@
 		};
 		31232E371B14B37B007C28E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D601358337C79FA12E0024E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4002BF421B26930500A5046E /* Pods-TodoEver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -588,7 +676,7 @@
 		};
 		31232E381B14B37B007C28E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2E3CDF3B274DF0AF5C83D96 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4002BF431B26930500A5046E /* Pods-TodoEver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -604,11 +692,13 @@
 		};
 		31232E3A1B14B37B007C28E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D42C9EB5F2FC3B98018F82A /* Pods-TodoEverTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TodoEver/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -617,21 +707,26 @@
 				INFOPLIST_FILE = TodoEverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TodoEver/Classes/Bridge/TDE-Bridge-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoEver.app/TodoEver";
 			};
 			name = Debug;
 		};
 		31232E3B1B14B37B007C28E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79EDDC2FC7632266673615FC /* Pods-TodoEverTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TodoEver/Frameworks",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = TodoEverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TodoEver/Classes/Bridge/TDE-Bridge-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoEver.app/TodoEver";
 			};
 			name = Release;
