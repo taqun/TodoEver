@@ -32,6 +32,7 @@
 		404FD5051B2691E9006813B8 /* ENSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3135A61A1B14BDDA00BA6689 /* ENSDK.framework */; };
 		408D33D31B1C064100D2D945 /* TodoEver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D11B1C064100D2D945 /* TodoEver.xcdatamodeld */; };
 		408D33D61B1C075E00D2D945 /* TDEMNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D33D51B1C075E00D2D945 /* TDEMNote.swift */; };
+		409B83821B29482C00C31235 /* TDEMTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B83811B29482C00C31235 /* TDEMTaskTests.swift */; };
 		40AEF7751B157258004DEE74 /* TDEModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF7741B157258004DEE74 /* TDEModelManager.swift */; };
 		40AEF7781B157355004DEE74 /* SigninViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AEF7771B157355004DEE74 /* SigninViewController.storyboard */; };
 		40AEF77B1B15744F004DEE74 /* TDESigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */; };
@@ -81,6 +82,7 @@
 		404FD5061B2691F5006813B8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		408D33D21B1C064100D2D945 /* TodoEver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoEver.xcdatamodel; sourceTree = "<group>"; };
 		408D33D51B1C075E00D2D945 /* TDEMNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMNote.swift; path = Classes/Model/Managed/TDEMNote.swift; sourceTree = "<group>"; };
+		409B83811B29482C00C31235 /* TDEMTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEMTaskTests.swift; path = Tests/Model/TDEMTaskTests.swift; sourceTree = "<group>"; };
 		40AEF7741B157258004DEE74 /* TDEModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDEModelManager.swift; path = Classes/Model/TDEModelManager.swift; sourceTree = "<group>"; };
 		40AEF7771B157355004DEE74 /* SigninViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SigninViewController.storyboard; path = Assets/SigninViewController.storyboard; sourceTree = "<group>"; };
 		40AEF77A1B15744F004DEE74 /* TDESigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TDESigninViewController.swift; path = Classes/ViewController/TDESigninViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				4002BF491B26956600A5046E /* TDEMNoteTests.swift */,
+				409B83811B29482C00C31235 /* TDEMTaskTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				4002BF4A1B26956600A5046E /* TDEMNoteTests.swift in Sources */,
 				4002BF471B26950500A5046E /* TDEMNote.swift in Sources */,
+				409B83821B29482C00C31235 /* TDEMTaskTests.swift in Sources */,
 				4002BF481B26952600A5046E /* TDEMTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

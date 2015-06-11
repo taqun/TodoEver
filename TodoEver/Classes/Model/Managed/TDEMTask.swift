@@ -17,19 +17,7 @@ class TDEMTask: NSManagedObject {
     @NSManaged var title: String
     @NSManaged var isChecked: Bool
     @NSManaged var index: Int
-    
-    /*
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
-    <en-note>
-        <div>
-            <en-todo checked="true"></en-todo>Task A
-        </div>
-        <div>
-            <en-todo></en-todo>Task B
-        </div>
-    </en-note>
-    */
+
     
     /*
      * Public Method
